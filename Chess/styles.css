@@ -1,0 +1,45 @@
+#gameBoard {
+    width: 320px;
+    height: 320px;
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.square {
+    height: 40px;
+    width: 40px;
+    position: relative; /* Need to understand */
+}
+
+.square svg {
+    height: 30px;
+    width: 30px;
+    margin: 5px;
+    position: relative; /* Need to understand */
+    z-index: -9;/* Need to understand */
+}
+
+path {
+    position: relative; /* Need to understand */
+    z-index: -10; /* Need to understand */
+}
+.piece{
+    position: relative; /* Need to understand */
+    z-index: 9; /* Need to understand */
+}
+
+.beige {
+    background-color: rgb(110, 110, 98);
+}
+
+.brown {
+    background-color: rgb(169, 43, 43);
+}
+
+.black {
+    fill: rgb(28, 28, 28)
+}
+.white {
+    fill: rgb(250, 248, 248)
+}
