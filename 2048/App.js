@@ -26,7 +26,6 @@ const tileColors = [
     "#4A4743",  // Custom for higher values
 ];
 
-// at a certain moment max-call stack become full identify and fix the bug
 document.addEventListener('DOMContentLoaded', () => {
     const gridDisplay = document.querySelector('.grid');
     const scoreDisplay = document.querySelector('#score');
@@ -64,7 +63,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (squares[randomNumber].innerHTML == 0) {
             squares[randomNumber].innerHTML = 2
         } else {
-            generateNumber();
+            let allRowFill = squares.every(num => num.innerHTML != 0);
+            if(!allRowFill){
+                generateNumber();
+            }
         }
     }
 
