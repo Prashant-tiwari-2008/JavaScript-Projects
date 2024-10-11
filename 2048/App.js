@@ -26,6 +26,7 @@ const tileColors = [
     "#4A4743",  // Custom for higher values
 ];
 
+// at a certain moment max-call stack become full identify and fix the bug
 document.addEventListener('DOMContentLoaded', () => {
     const gridDisplay = document.querySelector('.grid');
     const scoreDisplay = document.querySelector('#score');
@@ -202,10 +203,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (allRowFill && score != 2048) {
             resultDisplay.style.color = "Red"
             resultDisplay.innerHTML = "Game Over"
-
+            document.removeEventListener('keydown', control);
         }else if(score == 2048){
             resultDisplay.style.color = "Green"
             resultDisplay.innerHTML = "Hurry!, have won the Game"
+            document.removeEventListener('keydown', control);
         }
     }
 
